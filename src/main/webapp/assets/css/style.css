@@ -1,0 +1,103 @@
+body{/* background: #1F2539; */background-color: #191d2a;}
+a:hover, a:focus{text-decoration: none; color: #fff}
+a{color: #fff!important}
+li{list-style-type: none}
+.clear{clear:both;}
+.main-nav li a, .main-nav li a:hover,.main-nav li a:focus,.main-nav li a:active{border-bottom: 3px solid}
+.main-nav li a{padding-bottom: 12px;text-transform: capitalize;border-color: #191d2a;}
+.main-nav li a:hover, .main-nav li a.active, .main-nav li a:focus{border-color: rgb(62, 243, 235);background-color: transparent!important;}
+
+.cust-navbar{border-radius: 0;background-color: transparent;padding: 10px 30px;margin-bottom: 5px;}
+.cust-navbar:after{content: "";width: 100%; background: linear-gradient(to top right, #3acfd5 0%, #3a4ed5 100%); height: 1px; }
+.cust-navbar .navbar-brand, .cust-navbar li a{color:#ccc;}
+.cust-navbar .nav > li > a:hover, .cust-navbar .nav > li > a:focus, .cust-navbar .nav .open > a, .cust-navbar .nav .open > a:hover,.cust-navbar .nav .open > a:focus{
+    background-color: #31484e;  }
+.cust-navbar .dropdown-menu {background-color: #31484e;}
+.cust-navbar .dropdown-menu > li > a:hover, .cust-navbar .dropdown-menu > li > a:focus{background-color: #4e6166;}
+.dropdown-cust .dropdown-menu{background-color: rgb(116, 118, 133);border: 0;border-radius: 0;padding-top: 0;}
+.dropdown-cust .dropdown-menu > .active > a, .dropdown-cust .dropdown-menu > .active > a:hover, .dropdown-cust .dropdown-menu > .active > a:focus,
+.dropdown-cust .dropdown-menu > li > a:hover, .dropdown-cust .dropdown-menu > li > a:focus{background-color: #606272!important;}
+
+.wrapper{ padding-bottom: 15px;  width: 95%;    margin:0 auto;	       box-shadow: -1px 0px 11px 7px #1b1f2e;    background: #E6DADA;
+	       background: -webkit-linear-gradient(to top, #bebabb , #274046);
+	       background: linear-gradient(to bottom, #bebabb , #274046);
+	       background: linear-gradient(to bottom, #636272 , #274046);
+	       }
+.dropdown-cust{padding: 10px;}
+.dropdown-cust .dropdown{margin-right: 10px;padding: 10px 10px;display: inline-block;}
+.dropdown-cust .fa{font-size: 14px!important;font-weight: normal;}
+
+.portlet{background: rgba(255,255,255,0.1);color: #cccdd1;/* color: #3b3d43; */padding: 15px;box-shadow: 1px 1px 35px -13px #334a4f;margin-bottom: 10px;}
+.portlet .dropdown-cust {padding: 0;display: inline-block;padding: 0 15px;}
+.portlet .dropdown-cust .dropdown{padding: 0;margin-right: 0}
+.portlet-heading{height: 18px;/* color: #ededed; */color: #fff;}
+.portlet-heading:before, .portlet-heading:after, .portlet:after{content: ""; display: table;}
+.portlet-heading:after, .portlet:after{clear: both}
+.portlet-title{float: left;text-transform: uppercase;font-weight: bold;}
+.portlet-number{text-align: center;font-size: 8em;color: #272b3b;line-height: 1;}
+.title-bullet{width: 10px;height: 10px;margin-right: 5px;display: inline-block;border-radius: 100%;box-shadow: 0px 0px 12px 3px #707b80;}
+.title-bullet-small{width: 7px;height: 7px;margin-right: 9px;}
+
+
+/*colors*/
+.green{background-color: #29f329;}
+.blue{background-color: #2be6f1;}
+.yellow{background-color: #f9f721;}
+.carrot{background-color: #FF6384;}
+.grey{background-color: #b6bbbc;}
+
+/*portlet-actions*/
+.portlet-actions{ float: right;}
+.portlet-actions a{display: inline-block;}
+.portlet-actions .date-range{display: inline-block;cursor: pointer;}
+
+
+.portlet-body{ padding: 15px 0;}
+.portlet-footer{color: #ccd1d3;text-align: center;font-size: 12px;}
+.portlet-footer span{display: inline-block;}
+.portlet-footer > span{float: left;}
+.portlet-footer > span +span{float: right;}
+
+/*pagination*/
+.portlet-footer .pagination{margin:0;}
+.portlet-footer .pagination > li > a, .pagination > li > span{background: transparent;border: 1px solid transparent; border-radius: 0;}
+.portlet-footer .pagination > .active > a,.portlet-footer .pagination >.portlet-footer .active > span,.portlet-footer .pagination > .active > a:hover,
+.portlet-footer .pagination > .active > span:hover,.portlet-footer .pagination > .active > a:focus,.portlet-footer .pagination > .active > span:focus,
+.portlet-footer .pagination > li > a:hover,.portlet-footer .pagination > li > span:hover,.portlet-footer .pagination > li > a:focus,
+.portlet-footer .pagination > li > span:focus{background-color: rgba(255,255,255,0.1);border: 1px solid transparent;}
+/*breaddcrumb*/
+.breadcrumb-cust{padding: 10px;width: 100%;display: inline-block;}
+.breadcrumb-cust .dropdown{padding: 10px 7px;margin: 0px 0 0 10px;z-index: 1;}
+.breadcrumb-cust li {/* float: left; */margin: 0;}
+.breadcrumb-cust li a{background: #4E5260;padding: 11px 16px;float: left;text-decoration: none;color: #444;position: relative;}
+.breadcrumb-cust li a::after{
+    content: "";
+    position: absolute;
+    top: 50%;
+    margin-top: -21px;
+    border-top: 21px solid transparent;
+    border-bottom: 21px solid transparent;
+    border-left: 14px solid #4E5260;
+    right: -14px;
+    }
+.breadcrumb-cust li a::before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    margin-top: -21px;
+    border-width: 21px 0 21px 14px;
+    border-style: solid;
+    border-color: #4E5260 #4E5260 #4E5260 transparent;
+    left: -14px;
+    }
+.breadcrumb-cust .dropdown.open li a::before{ content: ""; position: absolute;  top: 0;  margin-top: 0; border-width: 0; border-style: 0;  border-color: #fff;left: 0;}
+.breadcrumb-cust .dropdown.open li a::after{content: ""; position: absolute; top: 0; margin-top: 0; border-top: 0; border-bottom: 0;  border-left: 0; right: 0; }
+.breadcrumb-cust .dropdown.open li a{background-color: transparent;width: 100%;position: relative;/* padding: 10px; */}
+
+.checkbox-label{font-weight: normal;position: relative;padding-left: 30px;margin-bottom: 15px;cursor: pointer;font-size: 12px;font-weight: normal;}
+.checkbox-label >input{position: absolute;z-index: -1;opacity: 0}
+.checkbox-label >span{border: 1px solid transparent;  position: absolute;  top: 0;  left: 0; height: 19px;  width: 19px;  background: #E6E6E6;}
+
+.portlet-table table{margin-bottom: 0}
+.portlet-table table thead th{border-bottom: 1px solid #4b5c61;color: #dee7e9;}
+.portlet-table table tbody td{border-top: 1px solid rgba(0,0,0,0.1);}

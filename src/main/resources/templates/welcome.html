@@ -1,0 +1,96 @@
+
+<!--<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Thymeleaf Demo</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  </head>
+  <body>
+      <button type="button" class="btn btn-link">Home</button>
+  </body>
+</html> -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+    <head>
+        <meta charset="UTF-8"/>
+    </head>
+
+    <body>
+        <div id="objectID" sec:authorize="isAuthenticated()" layout:fragment="bodyContent">
+            <h1> Welcome <span th:text="${username}"></span><button type="button" class="btn btn-link" onclick="getUserDetails()">Click Here</button>
+
+                <button type="button" sec:authorize="hasRole('ROLE_HR')" class="btn btn-info" onclick="getAllUserDetails()">All User Details</button>
+                <button type="button" sec:authorize="hasRole('ROLE_ADMIN')" class="btn btn-info" onclick="createUserDetails()">Create User</button>
+
+            </h1>
+            <table id="location" class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>User Name</th>
+                        <th>Authority</th>
+                        <!--<th>Grant Type</th>-->
+                    </tr>
+                </thead>
+            </table>
+            
+            <div id="objectID1"></div>
+        </div>
+
+        <div layout:fragment="scripts">
+            <script type="text/javascript" th:inline="javascript">
+                var token = $.cookie("access_token");
+                $(document).ready(function () {
+                    $('#location').hide();
+
+                });
+                function getUserDetails() {
+                    var trHTML = '';
+                    $.ajax({
+                        type: "POST",
+                        url: "/authservice/getUserDetails",
+                        data: {access_token: token},
+                        success: function (response) {
+                            var username = response.userAuthentication.details.username;
+                            var authority = response.authorities[0].authority;
+                            trHTML += '<tr><td>' + username + '</td><td>' + authority + '</td></tr>';
+                            $('#location').append(trHTML);
+                            $('#location').show();
+                        }
+                    });
+
+                }
+
+                function createUserDetails() {
+//                    $.ajax({
+//                        type: "POST",
+//                        url: "/authservice/create/New/User",
+//                        data: {access_token: token},
+//                        success: function (response) {
+//                            console.log(response);
+//                        }
+//                    });
+
+                $("#objectID1").load("http://localhost:7000/authservice/create/New/User", {access_token: token});
+
+                }
+
+                function getAllUserDetails() {
+                    var trHTML = '';
+                    $.ajax({
+                        type: "POST",
+                        url: "/authservice/getAllUserDetails",
+                        data: {access_token: token},
+                        success: function (response) {
+                            $.each(response, function (i, item) {
+                                trHTML += '<tr><td>' + item.name + '</td><td>' + item.authority + '</td></tr>';
+                            });
+                            $('#location').append(trHTML);
+                            $('#location').show();
+                        }
+                    });
+
+                }
+            </script>
+        </div>
+    </body>
+</html>

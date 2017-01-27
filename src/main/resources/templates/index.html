@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorator="maintemplate">
+    <head>
+        <meta charset="UTF-8"/>
+    </head>
+
+    <body>
+        <div id="objectID" layout:fragment="bodyContent" style="margin-top:50px;"> 
+            <div class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Oauth Service</a>
+                </div>
+                <center>
+                    <div class="navbar-collapse collapse" id="navbar-main">
+
+                        <div  class="navbar-form navbar-right" role="search">
+                            <button sec:authorize="isAnonymous()" type="submit" class="signin btn btn-default" onclick="formlogin();">Sign In</button>
+                        </div>
+                    </div>
+                </center>
+            </div>
+        </div>
+            
+
+        </div>
+        <div layout:fragment="scripts">
+            <script type="text/javascript" th:inline="javascript">
+//                 $(document).ready(function () {
+//                    $('#location').hide();
+//                    
+//                });
+                function formlogin() {
+
+                    $("#objectID").load("http://localhost:7000/authservice/login");
+                }
+
+            </script>
+        </div>
+
+    </body>
+</html>
