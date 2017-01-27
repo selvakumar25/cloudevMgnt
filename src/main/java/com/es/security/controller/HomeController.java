@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  *
- * @author VIGNESH
+ * @author VIGNESHSe
  */
 @Controller
 public class HomeController {
