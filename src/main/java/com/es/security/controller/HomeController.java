@@ -52,7 +52,7 @@ public class HomeController {
     public String getWelcomePage(Principal principal, Map map) {
         System.out.println("Principal" + principal);
         map.put("username", principal.getName());
-        return "welcome";
+        return "welcome User";
     }
 
     @RequestMapping("/getUserDetails")
